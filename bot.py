@@ -12,7 +12,7 @@ from mtranslate import translate
 from gtts import gTTS
 import time
 
-client = MongoClient("mongodb+srv://really651:K4vSnRMEsZhqsTqS@cluster0.pxc2foz.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://really651:gSPMW6u9WuStXIwD@cluster0.pxc2foz.mongodb.net/?retryWrites=true&w=majority")
 
 db = client["Newdb"]
 collection = db["Mycollection"]
@@ -189,7 +189,7 @@ def handle_choose(message):
                     return bot.send_message(message.chat.id, "🔄Sirreeffamni Afaan keessanii gara Afaan {} tti jijjiirameera!".format(langs), reply_markup=ReplyKeyboardRemove())
             return bot.send_message(message.chat.id, "💡Maaloo Afaan Keessan Filadhaa💾", reply_markup=keyboards())
         except Exception as e:
-            bot.send_message(message.chat.id, e)
+            #bot.send_message(message.chat.id, e)
             return bot.send_message(message.chat.id, "💡Maaloo Afaan Keessan Filadhaa💾", reply_markup=keyboards())
 						
 @bot.message_handler(func = lambda message: True)
