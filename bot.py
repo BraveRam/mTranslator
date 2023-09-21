@@ -37,19 +37,19 @@ def start(message):
 @bot.inline_handler(lambda query: True)
 def a(message):
 	if len(message.query) ==0:
-		r8 = InlineQueryResultArticle("99", "Barreeffama barressaa....", InputTextMessageContent("Barreeffama barbaaddan inline mode irratti barreessitanii gara afaan birootti jijjiiruu dandeessu▼"), description ="Maaloo barreeffama afaan barbaaddanii barreessaa...", thumb_url="https://t.me/Oro_tech_tips/336")
+		r8 = InlineQueryResultArticle("99", "Barreeffama barressaa....", InputTextMessageContent("Barreeffama barbaaddan inline mode irratti barreessitanii gara afaan birootti jijjiiruu dandeessu▼"), description ="Maaloo barreeffama afaan barbaaddanii barreessaa...", thumbnail_url="https://t.me/Oro_tech_tipz/336")
 		bot.answer_inline_query(message.id, [r8])
 		return
 	else:
 		try:
 			t = translate(message.query, "om")
-			r1 = InlineQueryResultArticle("1", "🇪🇹Afaan Oromoo", InputTextMessageContent(t), description = t,  thumb_url="https://t.me/projectz7/72")
+			r1 = InlineQueryResultArticle("1", "🇪🇹Afaan Oromoo", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")
 			t = translate(message.query, "en")
-			r2 = InlineQueryResultArticle("2", "🇬🇧English",InputTextMessageContent(t), description = t,  thumb_url="https://t.me/projectz7/72")
+			r2 = InlineQueryResultArticle("2", "🇬🇧English",InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")
 			t = translate(message.query, "am")
-			r3 = InlineQueryResultArticle("3", "🇪🇹Amharic", InputTextMessageContent(t), description = t,  thumb_url="https://t.me/projectz7/72")
+			r3 = InlineQueryResultArticle("3", "🇪🇹Amharic", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")
 			t = translate(message.query, "hi")
-			r4 = InlineQueryResultArticle("4", "🇮🇳Hindi", InputTextMessageContent(t), description = t,  thumb_url="https://t.me/projectz7/72")			
+			r4 = InlineQueryResultArticle("4", "🇮🇳Hindi", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")			
 			bot.answer_inline_query(message.id, [r1, r2, r3, r4])
 		except:
 			pass
