@@ -14,7 +14,7 @@ client = MongoClient("mongodb+srv://really651:gSPMW6u9WuStXIwD@cluster0.pxc2foz.
 db = client["Newdb"]
 collection = db["Mycollection"]
 
-bot = telebot.TeleBot("5769907387:AAF1QPdt8rgmFOLpM-PZaeooap_Vr27dJGI")
+bot = telebot.TeleBot("5801051594:AAFqio-YZGMPtRP4WSH8QSP90vVu3YqrEhs")
 
 keyboard = InlineKeyboardMarkup()
 t = InlineKeyboardButton(text ="☑️Subscribe To The Channel", url="https://t.me/oro_tech_tips")
@@ -127,7 +127,7 @@ def check(message):
 @bot.message_handler(commands =["feedback"])
 def feedback(message):
 	if len(message.text.split(" "))  == 1:
-		bot.send_message(message.chat.id, "💡Yaada kennuuf fakkeenya kanaan kenni👇\n<code>/feedback baay\'ee bareedaadha.</code>", parse_mode ="html")
+		bot.send_message(message.chat.id, "💡Yaada kennuuf fakkeenya kanaan kenni👇\n<code>/feedback bot kana jaalladheen jira😍</code>", parse_mode ="html")
 		return 
 	else:
 		a = message.text.split(maxsplit = 1)[1]
