@@ -17,7 +17,7 @@ collection = db["Mycollection"]
 bot = telebot.TeleBot("5801051594:AAEr-dyGJDGZMsrguS4zCr3xrvNdYVUNbjU")
 
 keyboard = InlineKeyboardMarkup()
-t = InlineKeyboardButton(text ="☑️Subscribe To The Channel", url="https://t.me/oro_tech_tips")
+t = InlineKeyboardButton(text ="☑️Subscribe To The Channel", url="https://t.me/oro_tech_tipz")
 t1 = InlineKeyboardButton(text ="🔄Inline Here", switch_inline_query_current_chat="How are you?")
 t2 = InlineKeyboardButton(text ="🔂Inline Another Chat", switch_inline_query="How are you?")
 keyboard.add(t1)
@@ -43,13 +43,13 @@ def a(message):
 	else:
 		try:
 			t = translate(message.query, "om")
-			r1 = InlineQueryResultArticle("1", "🇪🇹Afaan Oromoo", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")
+			r1 = InlineQueryResultArticle("1", "🇪🇹Afaan Oromoo", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/Oro_tech_tipz/336")
 			t = translate(message.query, "en")
-			r2 = InlineQueryResultArticle("2", "🇬🇧English",InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")
+			r2 = InlineQueryResultArticle("2", "🇬🇧English",InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/Oro_tech_tipz/336")
 			t = translate(message.query, "am")
-			r3 = InlineQueryResultArticle("3", "🇪🇹Amharic", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")
+			r3 = InlineQueryResultArticle("3", "🇪🇹Amharic", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/Oro_tech_tipz/336")
 			t = translate(message.query, "hi")
-			r4 = InlineQueryResultArticle("4", "🇮🇳Hindi", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/projectz7/72")			
+			r4 = InlineQueryResultArticle("4", "🇮🇳Hindi", InputTextMessageContent(t), description = t,  thumbnail_url="https://t.me/Oro_tech_tipz/336")			
 			bot.answer_inline_query(message.id, [r1, r2, r3, r4])
 		except:
 			pass
@@ -202,7 +202,7 @@ def str1(message):
 	   	bot.reply_to(message, "<b>{}</b>".format(translated_text), parse_mode ="html")
 	   else:
 	   	key = InlineKeyboardMarkup()
-	   	k1 = InlineKeyboardButton(text ="♻️Join Channel♻️", url="t.me/oro_tech_tips")
+	   	k1 = InlineKeyboardButton(text ="♻️Join Channel♻️", url="t.me/oro_tech_tipz")
 	   	key.add(k1)
 	   	bot.send_message(message.chat.id, f"⚠️{message.chat.first_name} Bot Kana Fayyadamuun dura Channel keenya Join gochuu qabdu!\n👌San booda fayyadamuu dandeessu", reply_markup = key)
 				
