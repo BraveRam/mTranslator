@@ -100,8 +100,6 @@ help ="""
 
 🎙Akkasumas barreefama gara sagaleetti jijjiiruu ni danda'a✅
 
-👌Keessattuu bootiin kun Barattootaaf baay'ee tokko barbaachisaadha.
-
 🌍Sirreeffama Afaanii jijjiiruuf /set jedhu cuqaasaa👏
 
 🕹Barreeffama gara sagaleetti jijjiiruuf /tts kan jedhu cuqaasaa💡
