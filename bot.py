@@ -115,7 +115,7 @@ help ="""
 def maker(message):
 	bot.send_message(message.chat.id, help, reply_markup = keyboard)
 
-channels = ["@oro_tech_tips"]
+channels = ["@oro_tech_tipz"]
 
 def check(message):
 	for i in channels:
