@@ -3,3 +3,4 @@ pytelegrambotapi
 mtranslate
 googletrans==3.1.0a0
 gtts
+dnspython==2.3.0
