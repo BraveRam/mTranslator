@@ -1,5 +1,5 @@
 pymongo 
-pytelegrambotapi==4.
+pytelegrambotapi
 mtranslate
 googletrans==3.1.0a0
 gtts
