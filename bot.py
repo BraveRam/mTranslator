@@ -1,4 +1,4 @@
-import googletrans
+import googletrans, requests
 from googletrans import LANGCODES, Translator
 import telebot 
 from telebot import custom_filters
