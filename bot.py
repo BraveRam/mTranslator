@@ -186,7 +186,7 @@ def photo(message):
 				downloaded_file = bot.download_file(file_info.file_path)
 				if message.caption:
 					bot.send_photo(a, downloaded_file, caption =message.caption)
-					success+=1					
+					#success+=1					
 		except Exception as e:
 			print(e)
 			pass
