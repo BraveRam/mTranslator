@@ -24,6 +24,39 @@ keyboard.add(t1)
 keyboard.add(t2)
 keyboard.add(t)
 
+def translate_photo(message):
+    b = bot.reply_to(message,"<i>Maaloo xiqqoo eegaa....:-)</i>", parse_mode="html")
+    file_info = bot.get_file(message.photo[-1].file_id)
+    downloaded_file = bot.download_file(file_info.file_path)    
+    api_key = 'K81164834388957'
+    url = 'https://api.ocr.space/parse/image'
+    payload = {
+        'apikey': api_key,
+        'language': 'eng',
+        'isOverlayRequired': False
+    }
+    files = {
+        'filename': ('image.jpg', downloaded_file, 'image/jpeg')
+    }
+    response = requests.post(url, data=payload, files=files)
+    if response.status_code == 200:
+        response_data = response.json()
+        if response_data['IsErroredOnProcessing']:
+            error_message = response_data['ErrorMessage']
+            bot.send_message(message.chat.id, 'Error: An error occured - please try again.')
+        else:
+            extracted_text = response_data['ParsedResults'][0]['ParsedText']
+            bot.delete_message(message.chat.id, b.id)
+            a = collection.find({"user_id": message.chat.id})
+            for i in a:
+              langs = i["lang"]
+              text = extracted_text
+              translated_text = translate(text, langs)
+              bot.reply_to(message, translated_text)
+    else:
+        bot.send_message(message.chat.id, 'Error: An error occured - please try again.')
+
+
 @bot.message_handler(commands=["start"], chat_types=["private"])
 def start(message):
 		ids = message.from_user.id
@@ -186,7 +219,19 @@ def handle_choose(message):
         except Exception as e:
             #bot.send_message(message.chat.id, e)
             return bot.send_message(message.chat.id, "💡Maaloo Afaan Keessan Filadhaa💾", reply_markup=keyboards())
-						
+
+@bot.message_handler(content_types=["photo"])
+def str1_photo(message):
+	sub = check(message)
+	if sub == True:
+	  bot.send_chat_action(message.chat.id, "typing")
+	  translate_photo(message)
+	else:
+	  key = InlineKeyboardMarkup()
+	  k1 = InlineKeyboardButton(text ="♻️Join Channel♻️", url="t.me/oro_tech_tipz")
+	  key.add(k1)
+	  bot.send_message(message.chat.id, f"⚠️{message.chat.first_name} Bot Kana Fayyadamuun dura Channel keenya Join gochuu qabdu!\n👌San booda fayyadamuu dandeessu", reply_markup = key)
+				
 @bot.message_handler(func = lambda message: True)
 def str1(message):
 	sub = check(message)
