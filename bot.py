@@ -14,7 +14,7 @@ client = MongoClient("mongodb+srv://really651:gSPMW6u9WuStXIwD@cluster0.pxc2foz.
 db = client["Newdb"]
 collection = db["Mycollection"]
 
-bot = telebot.TeleBot("5801051594:AAEr-dyGJDGZMsrguS4zCr3xrvNdYVUNbjU")
+bot = telebot.TeleBot("5801051594:AAFs_wJHPH91qzgGVratn4lTjIAWPa-DsOo")
 
 keyboard = InlineKeyboardMarkup()
 t = InlineKeyboardButton(text ="☑️Subscribe To The Channel", url="https://t.me/oro_tech_tipz")
@@ -187,7 +187,8 @@ def photo(message):
 				if message.caption:
 					bot.send_photo(a, downloaded_file, caption =message.caption)
 					success+=1					
-		except:
+		except Exception as e:
+			print(e)
 			pass
 	
 @bot.message_handler(commands =["sent"])
