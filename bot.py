@@ -252,5 +252,5 @@ def str1(message):
 				
 bot.add_custom_filter(custom_filters.StateFilter(bot))
 print("Successfully Started")
-bot.infinity_polling()
+bot.infinity_polling(drop_pending_updates=True)
 			
